@@ -27,7 +27,7 @@ Backup_the_student_record_to_your_PC (){
 }
 
 Back_up_the_student_record_to_the_remote_server (){
-        echo " Backing up the students record to the remote server"
+        echo "Backing up the students record to the remote server"
 	./backup-Negpod_6.sh
 }
 
