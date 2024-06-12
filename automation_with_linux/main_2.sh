@@ -22,13 +22,13 @@ Display_the_app_menu (){
 }
 
 Backup_the_student_record_to_your_PC (){
-        echo
-	echo
+	echo"Backing up student's records to the PC "
+	./Move-to-directory.sh
 }
 
 Back_up_the_student_record_to_the_remote_server (){
-        echo
-	echo
+        echo " Backing up the students record to the remote server"
+	./backup-Negpod_6.sh
 }
 
 Exit (){
