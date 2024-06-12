@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory="Negpod_id-q1"
+directory="Negpod_6-q1"
 
 if [[ ! -d $directory ]]; then
     mkdir $directory
