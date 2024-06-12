@@ -26,10 +26,10 @@ Display_the_app_menu (){
 } 
 
 Create_student_record (){
-	read -p "Enter student email: " email
+	read -p "Enter student ID: " ID
+        read -p "Enter student Email: " email
         read -p "Enter student age: " age
-        read -p "Enter student ID: " ID
-        echo "$email, $age , $ID" >> students-list_1023.txt
+        echo "$ID,$email,$age" >> students-list_1023.txt
 }   
 
 View_all_students (){
@@ -37,17 +37,85 @@ View_all_students (){
 } 
 
 Delete_student_record (){
-	read -p "Enter student ID to delete: "ID
-        sed -i "/,$ID$/d" students-list_1023.txt
+	read -p "Enter student ID to delete: " ID
+
+	if [ $(grep -c "$ID" students-list_1023.txt) -eq 1 ]; then
+	
+        	sed -i "/$ID/d" students-list_1023.txt
+	
+		echo "The ID: $ID has been succesfully deleted."
+	
+	else 
+		echo "Unable to find $ID ID.";
+	
+	fi
+
 }
 
 
-
 Update_student_record (){
-        read -p "Enter student ID to update: " ID
-        read -p "Enter student new email: " new_email
-        read -p "Enter student new  age: " new_age
-        sed -i "/,$ID$/c$new_email,$new_age,$ID" students-list_1023.txt
+	
+	read -p "What's your ID: " ID
+
+echo #empty line for readability
+
+if [[ $(grep -c $ID students-list_1023.txt) -eq 1 ]]; then
+
+        echo "The provided ID record is available!"
+        echo #empty line
+
+        read -p "What do you want to update? [email/age]: "
+        echo #empty line
+
+        if [[ $REPLY = email ]]; then
+
+                echo "is your email $(grep "$ID" students-list_1023.txt | cut -d ',' -f2)"
+                echo #empty line
+
+                read -p "[yes/no]: "
+                echo #empty line
+
+                if [[ $REPLY = yes ]]; then
+
+                        old_email="$(grep "$ID" students-list_1023.txt | cut -d ',' -f2)"
+
+                        read -p "Enter your new email: " new_email
+                        echo #empty line
+
+                        sed -i "s/$old_email/$new_email/g" students-list_1023.txt
+
+                        echo "Email changed successfully!" 
+                        echo
+                else
+                        echo "System Error! Retry."
+                        echo 
+
+                fi
+	 elif [[ $REPLY = age ]]; then
+
+                old_age="$(grep "$ID" students-list_1023.txt | cut -d ',' -f3)"
+
+                number_line="$(grep -n "$ID" students-list_1023.txt | cut -d ':' -f1)"
+
+                read -p "Enter your new age: " new_age
+                echo #empty line
+
+                sed -i "${number_line}s/$old_age/$new_age/" students-list_1023.txt
+
+                echo "Age changed successfully!"
+
+        else
+                echo "Wrong choice: Choose and Type between email and age"
+
+        fi
+
+else
+        echo "Invalid student ID";
+
+        exit 1;
+
+fi
+
 }
 
 Save_student_emails_sorted_in_ASC (){
