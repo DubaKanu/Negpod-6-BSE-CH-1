@@ -51,13 +51,13 @@ Update_student_record (){
 }
 
 Save_student_emails_sorted_in_ASC (){
-	echo
-	echo
+	echo "saving the emails in ASC order"
+	./select-emails.sh
 }
 
 View_all_emails_only_in_ASC_order (){
-     echo
-     echo
+	echo "sorting the emails in ASC order" 
+	cat student-emails.txt
 }
 
 Exit (){
