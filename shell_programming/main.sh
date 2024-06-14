@@ -37,8 +37,8 @@ View_all_students (){
 } 
 
 Delete_student_record (){
-	read -p "Enter student ID to delete: "ID
-        sed -i "/,$ID$/d" students-list_1023.txt
+	read -p "Enter student ID to delete: " ID
+
 }
 
 
