@@ -2,8 +2,8 @@
 # Backup the Negpod_6-q1 directory to the remote server
 
 directory="Negpod_6-q1"
-remote_host="8db086299c2d.51efc529.alu-cod.online"
-remote_user="8db086299c2d"
+remote_host="ec1ebc754f75.a5efec7a.alu-cod.online"
+remote_user="ec1ebc754f75"
 remote_directory="/summative/0524-2024m"
 
 if [[ -d $directory ]]; then
