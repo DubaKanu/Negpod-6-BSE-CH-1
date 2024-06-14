@@ -13,8 +13,8 @@ Display_the_app_menu (){
         echo "                                 MAIN MENU                                 "
         echo
         echo
-        echo "                    1. Back up the student record to your PC               "
-        echo "                    2. Back up the student record to the remote server     "
+        echo "                    1. Move files to directory                             "
+        echo "                    2. Back up files to the remote server                  "
         echo "                    3. Exit                                                "
         echo
 	echo -n "Enter your choice here [1-3]: "
@@ -22,12 +22,12 @@ Display_the_app_menu (){
 }
 
 Backup_the_student_record_to_your_PC (){
-	echo"Backing up student's records to the PC "
+	echo "Moving files to directory"
 	./Move-to-directory.sh
 }
 
 Back_up_the_student_record_to_the_remote_server (){
-        echo "Backing up the students record to the remote server"
+        echo "Backing up files to the remote server"
 	./backup-Negpod_6.sh
 }
 
