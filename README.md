@@ -11,3 +11,10 @@ This repository contains scripts for an application that manages student records
 - Save student emails in a sorted (ascending) order
 - View all sorted student emails
 
+## Files
+
+- main.sh: The main script that runs the application and provides a menu-driven interface for user interactions.
+- students-list_0524.txt: A file that stores the registered student records in the format student_id,email,age.
+- select-emails.sh: A script that selects and sorts student emails from the students-list_0524.txt file in ascending order.
+- student-emails.txt: A file that stores the sorted student emails.
+
