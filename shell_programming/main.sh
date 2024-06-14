@@ -26,10 +26,10 @@ Display_the_app_menu (){
 } 
 
 Create_student_record (){
-	read -p "Enter student email: " email
-        read -p "Enter student age: " age
-        read -p "Enter student ID: " ID
-        echo "$email, $age , $ID" >> students-list_1023.txt
+	read -p "Enter student ID: " ID
+        read -p "Enter student Email: " email
+        read -p "Enter student Age: " age
+        echo "$ID,$email,$age" >> students-list_1023.txt
 }   
 
 View_all_students (){
