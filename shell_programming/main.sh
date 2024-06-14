@@ -96,6 +96,30 @@ if [[ $REPLY = yes ]]; then
                         echo
 		fi
 
+elif [[ $REPLY = age ]]; then
+
+                old_age="$(grep "$ID" students-list_1023.txt | cut -d ',' -f3)"
+
+                number_line="$(grep -n "$ID" students-list_1023.txt | cut -d ':' -f1)"
+
+                read -p "Enter your new age: " new_age
+                echo #empty line
+
+                sed -i "${number_line}s/$old_age/$new_age/" students-list_1023.txt
+
+                echo "Age changed successfully!"
+
+        else
+                echo "Wrong choice: Choose and Type between email and age"
+
+        fi
+
+else
+        echo "Invalid student ID";
+
+        exit 1;
+
+fi
 
 }	
 Save_student_emails_sorted_in_ASC (){
