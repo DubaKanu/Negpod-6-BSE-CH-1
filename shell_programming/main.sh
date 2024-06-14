@@ -53,11 +53,13 @@ Delete_student_record (){
 }
 
 
-
 Update_student_record (){
-	read -p "Enter your ID: " ID
+	
+	read -p "What's your ID: " ID
 
-	if [[ $(grep -c $ID students-list_1023.txt) -eq 1 ]]; then
+echo #empty line for readability
+
+if [[ $(grep -c $ID students-list_1023.txt) -eq 1 ]]; then
 
         echo "The provided ID record is available!"
         echo #empty line
@@ -65,7 +67,7 @@ Update_student_record (){
         read -p "What do you want to update? [email/age]: "
         echo #empty line
 
-	if [[ $REPLY = email ]]; then
+        if [[ $REPLY = email ]]; then
 
                 echo "is your email $(grep "$ID" students-list_1023.txt | cut -d ',' -f2)"
                 echo #empty line
@@ -73,7 +75,7 @@ Update_student_record (){
                 read -p "[yes/no]: "
                 echo #empty line
 
-if [[ $REPLY = yes ]]; then
+                if [[ $REPLY = yes ]]; then
 
                         old_email="$(grep "$ID" students-list_1023.txt | cut -d ',' -f2)"
 
@@ -85,11 +87,11 @@ if [[ $REPLY = yes ]]; then
                         echo "Email changed successfully!" 
                         echo
                 else
-                        echo "Retry."
-                        echo
-		fi
+                        echo "System Error! Retry."
+                        echo 
 
-elif [[ $REPLY = age ]]; then
+                fi
+	 elif [[ $REPLY = age ]]; then
 
                 old_age="$(grep "$ID" students-list_1023.txt | cut -d ',' -f3)"
 
