@@ -45,6 +45,9 @@ Delete_student_record (){
 
 		echo "The ID: $ID has been succesffuly deleted."
 
+	else
+		echo "Unable to find $ID ID.";
+
 }
 
 
