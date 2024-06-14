@@ -34,6 +34,7 @@ Create_student_record (){
 
 View_all_students (){
 	cat students-list_1023.txt
+	sleep 2
 } 
 
 Delete_student_record (){
@@ -103,6 +104,7 @@ if [[ $(grep -c $ID students-list_1023.txt) -eq 1 ]]; then
                 sed -i "${number_line}s/,$old_age/,$new_age/" students-list_1023.txt
 
                 echo "Age changed successfully!"
+		sleep 2
 
         else
                 echo "Wrong choice: Choose and Type between email and age"
@@ -111,6 +113,7 @@ if [[ $(grep -c $ID students-list_1023.txt) -eq 1 ]]; then
 
 else
         echo "Invalid student ID";
+	sleep 2
 
         exit 1;
 
@@ -120,11 +123,13 @@ fi
 Save_student_emails_sorted_in_ASC (){
 	echo "saving the emails in ASC order"
 	./select-emails.sh
+	sleep 2
 }
 
 View_all_emails_only_in_ASC_order (){
 	echo "sorting the emails in ASC order" 
-	cat student-emails.txt
+	cat ./student-emails.txt
+	sleep 2
 }
 
 Exit (){
