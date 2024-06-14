@@ -39,6 +39,10 @@ View_all_students (){
 Delete_student_record (){
 	read -p "Enter student ID to delete: " ID
 
+	if [ $(grep -c "$ID" students-list_1023.txt) -eq 1 ]; then
+
+		sed -i "/$ID/d" students-list_1023.txt
+
 }
 
 
