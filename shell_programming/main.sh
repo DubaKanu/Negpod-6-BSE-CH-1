@@ -55,17 +55,8 @@ Delete_student_record (){
 
 
 Update_student_record (){
-    echo
-    echo "Updating student record..."
-    echo
-    read -p "Enter student ID to update: " ID
-    read -p "Enter student new email: " new_email
-    read -p "Enter student new age: " new_age
-    sed -i "s/\(.*\), \($ID\)/\1, $new_email, $new_age, \2/" students-list_1023.txt
-    echo
-    echo "Student record updated successfully."
-    return
-}
+
+}	
 Save_student_emails_sorted_in_ASC (){
 	echo "saving the emails in ASC order"
 	./select-emails.sh
