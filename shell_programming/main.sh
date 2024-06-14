@@ -55,7 +55,15 @@ Delete_student_record (){
 
 
 Update_student_record (){
+	read -p "What's your ID: " ID
 
+	if [[ $(grep -c $ID students-list_1023.txt) -eq 1 ]]; then
+
+        echo "The provided ID record is available!"
+        echo #empty line
+
+        read -p "What do you want to update? [email/age]: "
+        echo #empty line
 }	
 Save_student_emails_sorted_in_ASC (){
 	echo "saving the emails in ASC order"
