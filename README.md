@@ -18,3 +18,12 @@ This repository contains scripts for an application that manages student records
 - select-emails.sh: A script that selects and sorts student emails from the students-list_0524.txt file in ascending order.
 - student-emails.txt: A file that stores the sorted student emails.
 
+
+## Usage
+
+1. Clone the repository or download the files.
+2. Navigate to the project directory.
+3. Make the scripts executable by running chmod +x main.sh select-emails.sh.
+4. Run the main application by executing ./main.sh.
+5. Follow the on-screen instructions to navigate the menu and perform various operations on student records.
+
