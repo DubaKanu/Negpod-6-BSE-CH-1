@@ -55,7 +55,7 @@ Delete_student_record (){
 
 
 Update_student_record (){
-	read -p "What's your ID: " ID
+	read -p "Enter your ID: " ID
 
 	if [[ $(grep -c $ID students-list_1023.txt) -eq 1 ]]; then
 
@@ -73,13 +73,6 @@ Update_student_record (){
                 read -p "[yes/no]: "
                 echo #empty line
 
-if [[ $REPLY = email ]]; then
-
-                echo "is your email $(grep "$ID" students-list_1023.txt | cut -d ',' -f2)"
-                echo #empty line
-
-                read -p "[yes/no]: "
-                echo #empty line
 if [[ $REPLY = yes ]]; then
 
                         old_email="$(grep "$ID" students-list_1023.txt | cut -d ',' -f2)"
@@ -92,7 +85,7 @@ if [[ $REPLY = yes ]]; then
                         echo "Email changed successfully!" 
                         echo
                 else
-                        echo "System Error! Retry."
+                        echo "Retry."
                         echo
 		fi
 
@@ -105,7 +98,7 @@ elif [[ $REPLY = age ]]; then
                 read -p "Enter your new age: " new_age
                 echo #empty line
 
-                sed -i "${number_line}s/$old_age/$new_age/" students-list_1023.txt
+                sed -i "${number_line}s/,$old_age/,$new_age/" students-list_1023.txt
 
                 echo "Age changed successfully!"
 
