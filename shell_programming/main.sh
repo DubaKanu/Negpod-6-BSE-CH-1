@@ -3,7 +3,7 @@
 #This script will also update student record, save student emails in sorted manner and view all sorted emails
 
 Display_the_app_menu (){
-	echo
+	
         echo "***************************************************************************"
         echo "************** Welcome to ALU's BSE student registration portal ***********"
         echo "***************************************************************************"
