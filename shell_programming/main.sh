@@ -43,6 +43,8 @@ Delete_student_record (){
 
 		sed -i "/$ID/d" students-list_1023.txt
 
+		echo "The ID: $ID has been succesffuly deleted."
+
 }
 
 
