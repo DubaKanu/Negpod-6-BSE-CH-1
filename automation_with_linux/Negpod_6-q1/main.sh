@@ -3,7 +3,7 @@
 #This script will also update student record, save student emails in sorted manner and view all sorted emails
 
 Display_the_app_menu (){
-	echo
+        echo	
         echo "***************************************************************************"
         echo "************** Welcome to ALU's BSE student registration portal ***********"
         echo "***************************************************************************"
@@ -26,10 +26,10 @@ Display_the_app_menu (){
 } 
 
 Create_student_record (){
-	read -p "Enter student email: " email
-        read -p "Enter student age: " age
-        read -p "Enter student ID: " ID
-        echo "$email, $age , $ID" >> students-list_1023.txt
+	read -p "Enter student ID: " ID
+        read -p "Enter student Email: " email
+        read -p "Enter student Age: " age
+        echo "$ID,$email,$age" >> students-list_1023.txt
 }   
 
 View_all_students (){
@@ -37,19 +37,26 @@ View_all_students (){
 } 
 
 Delete_student_record (){
-	read -p "Enter student ID to delete: "ID
-        sed -i "/,$ID$/d" students-list_1023.txt
+	read -p "Enter student ID to delete: " ID
+
+	if [ $(grep -c "$ID" students-list_1023.txt) -eq 1 ]; then
+
+		sed -i "/$ID/d" students-list_1023.txt
+
+		echo "The ID: $ID has been succesffuly deleted."
+
+	else
+		echo "Unable to find $ID ID.";
+	
+	fi
+
 }
 
 
 
 Update_student_record (){
-        read -p "Enter student ID to update: " ID
-        read -p "Enter student new email: " new_email
-        read -p "Enter student new  age: " new_age
-        sed -i "/,$ID$/c$new_email,$new_age,$ID" students-list_1023.txt
-}
 
+}	
 Save_student_emails_sorted_in_ASC (){
 	echo "saving the emails in ASC order"
 	./select-emails.sh
