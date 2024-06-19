@@ -2,6 +2,15 @@
 
 This repository contains scripts for an application that manages student records for the Bachelor of Software Engineering (BSE) program at the African Leadership University (ALU). The application allows users to perform various operations on student data, including creating, viewing, deleting, and updating records, as well as sorting and saving student emails.
 
+## Names of Students in Negpod_6-BSE_CH_1
+1. Admire
+2. Aimable
+3. Cynthia
+4. Fitsum
+5. Josephine
+6. Leroy
+7. Maajabu
+
 ## Features
 
 - Create new student records
