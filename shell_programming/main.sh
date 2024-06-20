@@ -128,7 +128,7 @@ Save_student_emails_sorted_in_ASC (){
 
 View_all_emails_only_in_ASC_order (){
 	echo "sorting the emails in ASC order" 
-	cat ./student-emails.txt
+	cat student-emails.txt
 	sleep 2
 }
 
